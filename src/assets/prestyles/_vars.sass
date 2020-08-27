@@ -1,0 +1,58 @@
+$navBgColor-l: #F7F7F7
+$navBorderColor-l: #C2C2C2
+$navLiHoverBgColor-l: #D9D9D9
+$navFontColor-l: #263238
+
+$navBgColor-d: #263238
+$navBorderColor-d: #4f5b62
+$navLiHoverBgColor-d: #4f5b62
+$navFontColor-d: #D9D9D9
+
+$columns: 12
+$offset: 30px
+$offset_one_side: ($offset / 2)
+
+$break_lg: 1100px
+$break_md: 960px
+$break_sm: 780px
+$break_xs: 560px
+
+=size($n)
+    $val: 100% / $columns * $n
+    width: #{calc(#{$val} - #{$offset})}
+
+=size-lg($n)
+    $val: 100% / $columns * $n
+    +lg(width, #{calc(#{$val} - #{$offset})})
+
+=size-md($n)
+    $val: 100% / $columns * $n
+    +md(width, #{calc(#{$val} - #{$offset})})
+
+=size-sm($n)
+    $val: 100% / $columns * $n
+    +sm(width, #{calc(#{$val} - #{$offset})})
+
+=size-xs($n)
+    $val: 100% / $columns * $n
+    +xs(width, #{calc(#{$val} - #{$offset})})
+
+=xs($name, $value)
+    @media screen and (max-width: $break_xs)
+        #{$name}: $value
+
+=md($name, $value)
+    @media screen and (max-width: $break_md)
+        #{$name}: $value
+
+=sm($name, $value)
+    @media screen and (max-width: $break_sm)
+        #{$name}: $value
+
+=xs-block()
+    @media screen and (max-width: $break_xs)
+        @content
+    
+$light: #F0F5FC
+$dark: #333333
+$accent: #4D4F7A

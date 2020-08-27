@@ -1,0 +1,248 @@
+@import "vars"
+@import "libs"
+@import "nav"
+
+body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,input,textarea,p,blockquote,th,td
+    margin: 0
+    padding: 0
+
+table
+    border-collapse: collapse
+    border-spacing: 0
+
+fieldset,img,abbr
+    border: 0
+
+address,caption,cite,code,dfn,em,strong,th,var
+    font-style: normal
+    font-weight: normal
+
+ul li
+    list-style: none
+
+caption,th
+    text-align: left
+
+h1,h2,h3,h4,h5,h6
+    font-size: 100%
+    font-weight: normal
+
+sup
+    vertical-align: text-top
+
+sub
+    vertical-align: text-bottom
+
+input,textarea,select
+    font-family: inherit
+    font-size: inherit
+    font-weight: inherit
+
+legend
+    color: #000
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main
+    display: block
+
+img
+    max-width: 100%
+    height: auto
+
+body
+    background-color: #333333
+    background-image: url(/assets/images/bg.jpg)
+    background-size: cover
+    height: 100vh
+    width: 100vw
+    color: $dark
+    font-family: 'Roboto',sans-serif
+
+.date
+    font-size: 24px
+    text-transform: uppercase
+
+.month
+    font-size: 20px
+    text-transform: uppercase
+
+.time
+    font-size: 24px
+    text-transform: uppercase
+
+ul.event
+    &>li
+        background-image: url(/assets/images/geks.png)
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center center
+        position: absolute
+        text-align: center
+        box-sizing: border-box
+        cursor: pointer
+
+        // width: 110px
+        // height: 70px
+        background: $light
+        z-index: 10
+        text-align: center
+        border-radius: 15px
+
+        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)
+
+        .date, .month
+            font-weight: 500
+
+        .place, .time, .btn
+            display: none
+            opacity: 0
+
+        
+        &.active
+            left: calc(50% - 170px)
+            right: 50%
+            top: calc(50% - 170px)
+            height: 340px
+            width: 340px
+            padding: 100px 10px
+            transition: all 300ms ease-in-out
+
+            .place, .time, .btn
+                display: block
+                opacity: 1
+
+            .btn
+                display: inline 
+
+            .place
+                font-size: 22px
+
+            .month
+                display: inline-block  
+                font-size: 34px
+                font-weight: 500
+
+            .date
+                font-weight: 500
+                font-size: 34px
+                display: inline-block
+
+.none
+    position: absolute
+    opacity: 0
+    height: 0
+    width: 0px
+    top: 0
+    
+
+
+.small
+    position: absolute
+    height: 150px
+    width: 150px
+    padding: 50px 10px
+    transition: all 300ms ease-in-out
+
+    &_top
+        top: 85px
+        right: 380px
+
+    &_bottom
+        left: 380px
+        bottom: 85px
+
+.middle
+    position: absolute
+    height: 200px
+    width: 200px
+    padding: 70px 10px
+    transition: all 300ms ease-in-out
+
+    &_top
+        top: 215px
+        right: 560px
+
+    &_bottom
+        left: 560px
+        bottom: 215px
+    
+
+.btn
+    text-decoration: none
+
+    &-info
+        color: $dark
+        border: 1px solid $dark
+        border-radius: 5px
+        padding: 5px 10px
+        margin-top: 15px
+
+.rival
+    background-color: #fff
+    position: absolute
+    height: 150px
+    width: 40%
+    color: $dark
+    line-height: 130px
+    padding: 10px 30px
+    box-sizing: border-box
+    font-size: 36px
+    font-weight: bold
+    border-radius: 10px
+
+    +xs-block()
+        width: 100%
+
+    &-first
+        text-align: right
+        left: 0
+        top: 330px        
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+
+        +xs-block()
+            top: 60px
+
+        &:before
+            content: ''
+            position: absolute
+            width: 100px
+            height: 100%
+            border-radius: inherit
+            transform: skewX(-29deg)
+            right: -40px
+            bottom: 0
+            z-index: -1
+            background-color: inherit
+
+    &-second
+        text-align: left
+        right: 0
+        top: 484px
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
+
+        +xs-block()
+            top: unset
+            bottom: 60px
+
+        &:before
+            content: ''
+            position: absolute
+            width: 100px
+            height: 100%
+            border-radius: inherit
+            transform: skewX(-29deg)
+            left: -40px
+            bottom: 0
+            z-index: -1
+            background-color: inherit
+
+.time
+    margin-bottom: 15px
+
+.event_rivals
+    opacity: 0
+    transition: 1s all ease
+
+.show
+    opacity: 1

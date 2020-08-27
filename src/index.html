@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style/style.min.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-wrapper">
+            <a href="#" class="nav-brand">
+                Билеты и абонементы
+            </a>
+            <label for="nav-toggler" class="nav-toggler-label"></label>
+            <input id="nav-toggler" class="nav-toggler" type="checkbox">
+            <div class="nav_content" id="navContent">
+                <ul class="nav-ul_wrapper wrapper">
+                    <li class="nav-item"><a href="#">Как купить?</a></li>
+                    <li class="nav-item"><a href="#">Правила</a></li>
+                    <li class="nav-item"><a href="#">Возврат билетов</a></li>
+                    <li class="nav-item"><a href="#">
+                            <div class="fa fa-sign-in"></div> Войти
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="search-field">
+            <form action="#" id="cse-search-box" class="nav-form container">
+                <input type="text" name="query" placeholder="Поиск по сайту..." />
+                <button type="submit">Поиск</button>
+            </form>
+        </div>
+    </nav>
+    <p id="showScroll">
+        as
+    </p>
+
+    <ul class="event">
+        <li class="small small_top" data-pos="2">
+            <h3 class="place">Стадион</h3>
+            <h2 class="date">30</h2>
+            <h3 class="month">Сентября</h3>
+            <h3 class="time">19:00</h3>
+            <a href="#" class="btn btn-info">Купить билет</a>
+        </li>
+        <li class="middle middle_top" data-pos="1">
+            <h3 class="place">Стадион</h3>
+            <h2 class="date">16</h2>
+            <h3 class="month">Июля</h3>
+            <h3 class="time">19:00</h3>
+            <a href="#" class="btn btn-info">Купить билет</a>
+        </li>
+        <li class="active" data-pos="0">
+            <h3 class="place">Стадион</h3>
+            <h2 class="date">26</h2>
+            <h3 class="month">Июня</h3>
+            <h3 class="time">19:00</h3>
+            <a href="#" class="btn btn-info">Купить билет</a>
+        </li>
+        <li class="middle middle_bottom" data-pos="-1">
+            <h3 class="place">Стадион</h3>
+            <h2 class="date">17</h2>
+            <h3 class="month">Июня</h3>
+            <h3 class="time">19:00</h3>
+            <a href="#" class="btn btn-info">Купить билет</a>
+        </li>
+        <li class="small  small_bottom" data-pos="-2">
+            <h3 class="place">Стадион</h3>
+            <h2 class="date">30</h2>
+            <h3 class="month">Мая</h3>
+            <h3 class="time">19:00</h3>
+            <a href="#" class="btn btn-info">Купить билет</a>
+        </li>
+    </ul>
+    <div class="event_rivals" data-rival-pos="2">
+        <div class="rival rival-first">
+            Соперник №1
+        </div>
+        <div class="rival rival-second">
+            Соперник №1
+        </div>
+    </div>
+    <div class="event_rivals" data-rival-pos="1">
+        <div class="rival rival-first">
+            Соперник №2
+        </div>
+        <div class="rival rival-second">
+            Соперник №2
+        </div>
+    </div>
+    <div class="event_rivals show" data-rival-pos="0">
+        <div class="rival rival-first">
+            Соперник №3
+        </div>
+        <div class="rival rival-second">
+            Соперник №3
+        </div>
+    </div>
+    <div class="event_rivals" data-rival-pos="-1">
+        <div class="rival rival-first">
+            Соперник №4
+        </div>
+        <div class="rival rival-second">
+            Соперник №4
+        </div>
+    </div>
+    <div class="event_rivals" data-rival-pos="-2">
+        <div class="rival rival-first">
+            Соперник №5
+        </div>
+        <div class="rival rival-second">
+            Соперник №5
+        </div>
+    </div>
+
+    <script src="assets/scripts/common.min.js"></script>
+</body>
+
+</html>
