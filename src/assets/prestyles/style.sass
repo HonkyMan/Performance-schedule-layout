@@ -52,6 +52,7 @@ body
     background-color: #333333
     background-image: url(/assets/images/bg.jpg)
     background-size: cover
+    background-position: center center
     height: 100vh
     width: 100vw
     color: $dark
@@ -80,6 +81,8 @@ ul.event
         box-sizing: border-box
         cursor: pointer
 
+        opacity: 0
+
         // width: 110px
         // height: 70px
         background: $light
@@ -95,6 +98,9 @@ ul.event
         .place, .time, .btn
             display: none
             opacity: 0
+
+        &.middle, &.small, &.active
+            opacity: 1
 
         
         &.active
@@ -128,12 +134,20 @@ ul.event
 
 .none
     position: absolute
-    opacity: 0
-    height: 0
-    width: 0px
-    top: 0
+    z-index: 0!important
+    // opacity: 0
+    // height: 150px
+    // width: 150px
+    // padding: 50px 10px
+    // transition: opacity 300ms ease-in-out
     
-
+    &_top
+        top: 85px
+        right: 380px
+    
+    &_bottom
+        left: 380px
+        bottom: 85px
 
 .small
     position: absolute
@@ -143,12 +157,12 @@ ul.event
     transition: all 300ms ease-in-out
 
     &_top
-        top: 85px
+        top: calc(50% - 400px)
         right: 380px
 
     &_bottom
+        top: calc(50% + 260px)    
         left: 380px
-        bottom: 85px
 
 .middle
     position: absolute
@@ -158,12 +172,12 @@ ul.event
     transition: all 300ms ease-in-out
 
     &_top
-        top: 215px
+        top: calc(50% - 300px)    
         right: 560px
 
     &_bottom
+        top: calc(50% + 100px)  
         left: 560px
-        bottom: 215px
     
 
 .btn
@@ -180,7 +194,7 @@ ul.event
     background-color: #fff
     position: absolute
     height: 150px
-    width: 40%
+    width: calc(50% - 340px / 2 - 15px)
     color: $dark
     line-height: 130px
     padding: 10px 30px
@@ -195,12 +209,14 @@ ul.event
     &-first
         text-align: right
         left: 0
-        top: 330px        
+        top: calc(50% - 150px - 5px)        
         border-top-left-radius: 0
         border-bottom-left-radius: 0
 
         +xs-block()
             top: 60px
+            border-radius: 10px
+            text-align: center
 
         &:before
             content: ''
@@ -214,16 +230,21 @@ ul.event
             z-index: -1
             background-color: inherit
 
+            +xs-block()
+                display: none
+
     &-second
         text-align: left
         right: 0
-        top: 484px
+        top: calc(50% + 5px)
         border-top-right-radius: 0
         border-bottom-right-radius: 0
 
         +xs-block()
             top: unset
             bottom: 60px
+            border-radius: 10px
+            text-align: center
 
         &:before
             content: ''
@@ -236,6 +257,9 @@ ul.event
             bottom: 0
             z-index: -1
             background-color: inherit
+            
+            +xs-block()
+                display: none
 
 .time
     margin-bottom: 15px

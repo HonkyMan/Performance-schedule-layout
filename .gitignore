@@ -1,0 +1,5 @@
+node_modules
+package-lock.json
+src/assets/scripts/common.min.js
+src/assets/style/style.min.css
+src/assets/style/style.min.css.map

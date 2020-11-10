@@ -96,7 +96,7 @@ function main_script() {
 		.pipe(babel({
 			presets: ['@babel/preset-env']
 		}))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.src + config.js.dest))
 		.pipe(browserSync.reload({ stream: true }))
